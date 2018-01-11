@@ -1,6 +1,6 @@
 <?php
 
-Route::domain('{account}.playground.test')->group(function () {
+Route::domain('{account}.'.env('APP_DOMAIN'))->group(function () {
     Route::get('/', function ($account) {
         $site = App\Site::findByKey($account);
         return view($site->site_key.'.home', [
