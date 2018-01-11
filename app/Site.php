@@ -18,6 +18,6 @@ class Site extends Model
 
     public function getUrlAttribute()
     {
-        return 'http://' . $this->site_key . '.playground.test';
+        return 'http://' . $this->site_key . '.' . env('APP_DOMAIN');
     }
 }
